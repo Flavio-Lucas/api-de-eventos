@@ -25,7 +25,7 @@ Se não possuir o Docker e o Docker Compose instalado, instale na máquina antes
 
 Use o seguinte comando para criar o arquivo de configurações a partir do exemplo:
 ```shell
-cp .env.example .env
+cp .env.example.example .env.example
 ```
 
 E depois, inicie o `container` que contém os serviços do Postgres usando:

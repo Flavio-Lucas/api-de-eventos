@@ -6,4 +6,4 @@ const rule = {
   AWS_REGION: envalid.str({ default: 'us-east-1' }),
 };
 
-module.exports = envalid.cleanEnv(process.env, rule, { dotEnvPath: '.env', strict: true, });
+module.exports = envalid.cleanEnv(process.env, rule, { dotEnvPath: '.env.example', strict: true, });

@@ -8,7 +8,7 @@ build/
 tmp/
 temp/
 swagger/*
-.env
+.env.example
 *.db
 *~
 *.sw[mnpcod]

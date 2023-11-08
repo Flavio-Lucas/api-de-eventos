@@ -18,10 +18,10 @@ export class EnvService extends implementOptionalInterface<Partial<Readonly<IDot
   /**
    * Construtor padrão
    *
-   * @param dotEnvName O nome do arquivo que contém as configurações, normalmente sendo .env
+   * @param dotEnvName O nome do arquivo que contém as configurações, normalmente sendo .env.example
    */
   constructor(
-    dotEnvName: string = '.env',
+    dotEnvName: string = '.env.example',
   ) {
     super();
 
@@ -46,7 +46,7 @@ export class EnvService extends implementOptionalInterface<Partial<Readonly<IDot
   /**
    * Método que realiza a validação das variaveis de ambiente
    *
-   * @param dotEnvName O nome do arquivo que contém as configurações, normalmente sendo .env
+   * @param dotEnvName O nome do arquivo que contém as configurações, normalmente sendo .env.example
    */
   private validate(dotEnvName: string): IDotEnv {
     type DotEnvValidation = { [key in keyof IDotEnv]: ValidatorSpec<any> };
