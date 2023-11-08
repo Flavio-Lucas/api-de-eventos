@@ -17,6 +17,13 @@ E agora, com o ambiente configurado, basta executar o comando `npm run deploy:aw
 
 Para rodar local você precisa executar o comando `npm run start:debug` além de estar rodando o banco de dados no docker ou tendo configurado o `.env` com as variaveis do banco de dados.
 
+## Preenchendo o banco de dados
+
+Para começar a utilizar a API o que você deve fazer primeiro é cadastrar um usuário, ele será cadastrado como um usuário comum, mas isso pode ser alterado diretamente no banco de dados trocando para 'admin' em suas permissões. O cadastro do usuário será feito pelo swagger na rota `localhost:3000/swagger` dentro da sessão `users` na rota post `/users`.
+Após isso você poderá utilizar na sessão Auth de autenticações a rota `auth/local` para fazer o login e obter o token de acesso que deve ser colado no botão `Authorize` e colar o token não se esquecendo de NÃO adicionar o Bearer do inicio do token.
+Em seguida clique no botão `Authorize` e está autenticado e pode usar essa API pelo swagger.
+A maior parte das rotas requerem authenticação para serem utilizadas, então o token deve ser enviado no header das requisições.
+
 ### Docker
 
 Se não possuir o Docker e o Docker Compose instalado, instale na máquina antes para conseguir usar o banco Postgres localmente.

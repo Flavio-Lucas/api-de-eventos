@@ -2,7 +2,7 @@
 
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
-import { IsDefined, IsEmail, IsMobilePhone, IsOptional, IsString } from 'class-validator';
+import { IsDefined, IsEmail, IsMobilePhone, IsOptional, IsString, MinLength } from 'class-validator';
 import { Column } from 'typeorm';
 
 import { DefaultValidationMessages } from '../../../models/enums/default-validation-messages';
@@ -19,6 +19,7 @@ export class CreateUserPayload {
   @ApiProperty()
   @IsDefined({ message: 'É necessário informar a senha.' })
   @IsString({ message: DefaultValidationMessages.IsString })
+  @MinLength(6, { message: 'A senha precisa ter no mínimo 6 caracteres.' })
   public password: string;
 
   @ApiProperty({ description: 'Only admins can change this property.' })
